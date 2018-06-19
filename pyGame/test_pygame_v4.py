@@ -1,21 +1,23 @@
 import pygame, sys
 import random
-import tkinter
+#import tkinter
 
 from pygame.locals import *
 
 pygame.init()
 fpsClock = pygame.time.Clock()
-window = tkinter.Tk()
-window.geometry = ("300x300")
-lbl = tkinter.Label(window, text = "Label")
-lbl.pack()
+#window = tkinter.Tk()
+#window.geometry = ("300x300")
+#lbl = tkinter.Label(window, text = "Label")
+#lbl.pack()
 
 
 #useful game dimensions
 TILESIZE = 40
 MAPWIDTH = 20
 MAPHEIGHT = 15
+
+path = 'Recources/'
 
 DISPLAYSURF = pygame.display.set_mode((MAPWIDTH*TILESIZE,MAPHEIGHT*TILESIZE+60))
 #constants representing colors
@@ -27,7 +29,7 @@ GREY  = (120, 120, 120)
 RED   = (255, 0,   0  )
 WHITE = (255, 255, 255)
 
-INVFONT = pygame.font.Font('Arial.ttf', 24)
+INVFONT = pygame.font.Font(path + 'Arial.ttf', 24)
 
 cloudx = -200
 cloudy = 0
@@ -44,14 +46,14 @@ CLOUD = 7
 
 #a dictionary linking recources to colours
 textures =   {
-                DIRT  : pygame.image.load('dirt.png'),
-                GRASS : pygame.image.load('grass.png'),
-                WATER : pygame.image.load('water.png'),
-                COAL  : pygame.image.load('coal.png'),
-                ROCK  : pygame.image.load('rock.png'),
-                LAVA  : pygame.image.load('lava.png'),
-                PLAYER : pygame.image.load('player.png').convert_alpha(),
-                CLOUD : pygame.image.load('cloud.png').convert_alpha()
+                DIRT  : pygame.image.load(path + 'dirt.png'),
+                GRASS : pygame.image.load(path + 'grass.png'),
+                WATER : pygame.image.load(path + 'water.png'),
+                COAL  : pygame.image.load(path + 'coal.png'),
+                ROCK  : pygame.image.load(path + 'rock.png'),
+                LAVA  : pygame.image.load(path + 'lava.png'),
+                PLAYER : pygame.image.load(path + 'player.png').convert_alpha(),
+                CLOUD : pygame.image.load(path + 'cloud.png').convert_alpha()
             }
 
 inventory =   {
