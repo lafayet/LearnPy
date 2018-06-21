@@ -1,0 +1,1 @@
+pyinstaller camels_game.py --clean --add-data "recources;recources" --noconsole
